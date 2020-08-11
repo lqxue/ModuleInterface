@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.tokentm.sdk.operator">
+
+    <application>
+        <provider
+                android:name=".Installer"
+                android:authorities="${applicationId}.tokentm_sdk_Installer"
+                android:exported="false" />
+    </application>
+</manifest>

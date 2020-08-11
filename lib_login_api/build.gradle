@@ -1,13 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.module.test"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
     }
     buildTypes {
         release {
@@ -18,6 +15,6 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-    implementation project(path: ':operator')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':lib_base')
 }

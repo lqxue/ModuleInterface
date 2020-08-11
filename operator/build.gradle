@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    //此处要透传  此处是模块的api  是可以暴露给外面的
+    api project(path: ':lib_login_api')
+    //此处不可透传要隐藏实现细节
+    implementation project(path: ':lib_login')
+    //隐藏实现细节
+    implementation project(path: ':lib_base')
+}
+

@@ -1,2 +1,6 @@
 include ':app'
-rootProject.name='ModuleInterface'
+include ':lib_login'
+include ':lib_login_api'
+include ':lib_base'
+include ':operator'
+rootProject.name = 'ModuleInterface'
